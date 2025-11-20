@@ -1,4 +1,4 @@
-import type { Config } from "@ccflare/config";
+import type { Config } from "@ccproxy/config";
 import {
 	DEFAULT_AGENT_MODEL,
 	NETWORK,
@@ -7,8 +7,8 @@ import {
 	TIME_CONSTANTS,
 	validateNumber,
 	validateString,
-} from "@ccflare/core";
-import { BadRequest, errorResponse, jsonResponse } from "@ccflare/http-common";
+} from "@ccproxy/core";
+import { BadRequest, errorResponse, jsonResponse } from "@ccproxy/http-common";
 import type { ConfigResponse, RetentionSetRequest } from "../types";
 
 /**

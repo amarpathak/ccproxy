@@ -1,7 +1,7 @@
 // Re-export all shared constants from ui-constants
 
 // Re-export agent constants from types
-export { TOOL_PRESETS } from "@ccflare/types";
+export { TOOL_PRESETS } from "@ccproxy/types";
 export {
 	API_LIMITS,
 	API_TIMEOUT,
@@ -14,4 +14,4 @@ export {
 	REFRESH_INTERVALS,
 	TIME_RANGES,
 	type TimeRange,
-} from "@ccflare/ui-constants";
+} from "@ccproxy/ui-constants";

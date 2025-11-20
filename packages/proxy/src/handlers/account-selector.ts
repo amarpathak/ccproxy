@@ -1,4 +1,4 @@
-import type { Account, RequestMeta } from "@ccflare/types";
+import type { Account, RequestMeta } from "@ccproxy/types";
 import type { ProxyContext } from "./proxy-types";
 
 /**

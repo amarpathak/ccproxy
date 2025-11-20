@@ -1,10 +1,10 @@
-import { getModelShortName } from "@ccflare/core";
+import { getModelShortName } from "@ccproxy/core";
 import {
 	formatCost,
 	formatNumber,
 	formatTokens,
 	formatTokensPerSecond,
-} from "@ccflare/ui-common";
+} from "@ccproxy/ui-common";
 import {
 	CartesianGrid,
 	Legend,

@@ -1,5 +1,5 @@
-import { getModelShortName } from "@ccflare/core";
-import { formatTokensPerSecond } from "@ccflare/ui-common";
+import { getModelShortName } from "@ccproxy/core";
+import { formatTokensPerSecond } from "@ccproxy/ui-common";
 import {
 	Bar,
 	BarChart,

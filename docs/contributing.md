@@ -1,6 +1,6 @@
-# Contributing to ccflare
+# Contributing to ccproxy
 
-Welcome to ccflare! We're thrilled that you're interested in contributing to our Claude load balancer project. This document provides guidelines and instructions for contributing to the project.
+Welcome to ccproxy! We're thrilled that you're interested in contributing to our Claude load balancer project. This document provides guidelines and instructions for contributing to the project.
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@ Welcome to ccflare! We're thrilled that you're interested in contributing to our
 
 ## Welcome & Code of Conduct
 
-First off, thank you for considering contributing to ccflare! We welcome contributions from everyone, regardless of their background or experience level.
+First off, thank you for considering contributing to ccproxy! We welcome contributions from everyone, regardless of their background or experience level.
 
 ### Our Pledge
 
@@ -64,13 +64,13 @@ Before you begin, ensure you have the following installed:
 
 2. **Clone your fork**:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/ccflare.git
-   cd ccflare
+   git clone https://github.com/YOUR_USERNAME/ccproxy.git
+   cd ccproxy
    ```
 
 3. **Add the upstream remote**:
    ```bash
-   git remote add upstream https://github.com/ORIGINAL_OWNER/ccflare.git
+   git remote add upstream https://github.com/ORIGINAL_OWNER/ccproxy.git
    ```
 
 4. **Install dependencies**:
@@ -161,10 +161,10 @@ When contributing, ensure any major architectural changes or new patterns are do
 
 ## Project Structure
 
-ccflare is organized as a Bun monorepo with clear separation of concerns:
+ccproxy is organized as a Bun monorepo with clear separation of concerns:
 
 ```
-ccflare/
+ccproxy/
 ├── apps/                    # Deployable applications
 │   ├── cli/                # Command-line interface
 │   ├── lander/            # Static landing page
@@ -199,7 +199,7 @@ ccflare/
 ### Package Naming Convention
 
 - Apps: Simple names (e.g., `server`, `cli`, `tui`)
-- Packages: Prefixed with `@ccflare/` (e.g., `@ccflare/core`, `@ccflare/database`)
+- Packages: Prefixed with `@ccproxy/` (e.g., `@ccproxy/core`, `@ccproxy/database`)
 
 ## Coding Standards
 
@@ -294,7 +294,7 @@ bun run lint
 
 1. **Import Order** (automatically organized by Biome):
    - External packages
-   - Internal packages (`@ccflare/*`)
+   - Internal packages (`@ccproxy/*`)
    - Relative imports
    - Type imports
 
@@ -305,10 +305,10 @@ bun run lint
 
    ```typescript
    // Good
-   import { Database } from '@ccflare/database';
-   import { LoadBalancer } from '@ccflare/load-balancer';
+   import { Database } from '@ccproxy/database';
+   import { LoadBalancer } from '@ccproxy/load-balancer';
    import { formatDate } from './utils';
-   import type { Account } from '@ccflare/types';
+   import type { Account } from '@ccproxy/types';
    
    // Bad
    import { Database } from '../../../packages/database/src';
@@ -689,48 +689,48 @@ Contributors are recognized in:
 
 ### Working with the CLI
 
-The CLI functionality is integrated into the TUI application. Use `ccflare` with command-line flags:
+The CLI functionality is integrated into the TUI application. Use `ccproxy` with command-line flags:
 
 ```bash
-# If ccflare is not installed globally, use:
+# If ccproxy is not installed globally, use:
 # bun run tui [options]
-# or build and run with: bun run ccflare
+# or build and run with: bun run ccproxy
 
 # Add a new account
-ccflare --add-account <name>
+ccproxy --add-account <name>
 # With options:
-ccflare --add-account <name> --mode <max|console> --tier <1|5|20>
+ccproxy --add-account <name> --mode <max|console> --tier <1|5|20>
 
 # List all accounts
-ccflare --list
+ccproxy --list
 
 # Remove an account
-ccflare --remove <name>
+ccproxy --remove <name>
 
 # Pause/resume accounts
-ccflare --pause <name>
-ccflare --resume <name>
+ccproxy --pause <name>
+ccproxy --resume <name>
 
 # Reset usage statistics
-ccflare --reset-stats
+ccproxy --reset-stats
 
 # Clear request history
-ccflare --clear-history
+ccproxy --clear-history
 
 # View statistics (JSON output)
-ccflare --stats
+ccproxy --stats
 
 # Stream logs
-ccflare --logs [N]  # Show N lines of history then follow
+ccproxy --logs [N]  # Show N lines of history then follow
 
 # Analyze database performance
-ccflare --analyze
+ccproxy --analyze
 
 # Start server with dashboard
-ccflare --serve --port 8080
+ccproxy --serve --port 8080
 
 # Show help
-ccflare --help
+ccproxy --help
 ```
 
 ### Running the Server
@@ -765,7 +765,7 @@ bun run tui
 # or
 bun run dev
 # or (builds first, then runs)
-bun run ccflare
+bun run ccproxy
 
 # Build the TUI
 bun run build:tui
@@ -787,7 +787,7 @@ bun run build:lander
 
 1. **TypeScript errors**: Run `bun run typecheck` to identify issues
 2. **Formatting issues**: Run `bun run format` to auto-fix
-3. **Import errors**: Ensure you're using workspace imports (`@ccflare/*`) for cross-package dependencies
+3. **Import errors**: Ensure you're using workspace imports (`@ccproxy/*`) for cross-package dependencies
 4. **Database issues**: The SQLite database is created automatically in the data directory
 
-Thank you for contributing to ccflare! Your efforts help make Claude AI more accessible to everyone.
+Thank you for contributing to ccproxy! Your efforts help make Claude AI more accessible to everyone.

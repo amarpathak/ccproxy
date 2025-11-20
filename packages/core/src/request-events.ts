@@ -13,12 +13,12 @@ export type RequestStartEvt = {
 
 export type RequestSummaryEvt = {
 	type: "summary";
-	payload: import("@ccflare/types").RequestResponse;
+	payload: import("@ccproxy/types").RequestResponse;
 };
 
 export type RequestPayloadEvt = {
 	type: "payload";
-	payload: import("@ccflare/types").RequestPayload;
+	payload: import("@ccproxy/types").RequestPayload;
 };
 
 export type RequestEvt =

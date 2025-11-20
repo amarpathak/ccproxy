@@ -1,7 +1,7 @@
-import { BUFFER_SIZES } from "@ccflare/core";
-import { sanitizeProxyHeaders } from "@ccflare/http-common";
-import { Logger } from "@ccflare/logger";
-import type { Account } from "@ccflare/types";
+import { BUFFER_SIZES } from "@ccproxy/core";
+import { sanitizeProxyHeaders } from "@ccproxy/http-common";
+import { Logger } from "@ccproxy/logger";
+import type { Account } from "@ccproxy/types";
 import { BaseProvider } from "../../base";
 import type { RateLimitInfo, TokenRefreshResult } from "../../types";
 

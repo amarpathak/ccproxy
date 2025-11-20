@@ -1,5 +1,5 @@
-import type { DatabaseOperations } from "@ccflare/database";
-import { jsonResponse } from "@ccflare/http-common";
+import type { DatabaseOperations } from "@ccproxy/database";
+import { jsonResponse } from "@ccproxy/http-common";
 
 /**
  * Create a stats handler

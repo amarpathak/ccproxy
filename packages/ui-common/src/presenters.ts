@@ -6,7 +6,7 @@ import type {
 	RequestResponse,
 	StatsResponse,
 	StatsWithAccounts,
-} from "@ccflare/types";
+} from "@ccproxy/types";
 import {
 	formatCost,
 	formatDuration,

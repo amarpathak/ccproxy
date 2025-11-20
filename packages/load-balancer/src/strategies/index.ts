@@ -1,11 +1,11 @@
-import { isAccountAvailable, TIME_CONSTANTS } from "@ccflare/core";
-import { Logger } from "@ccflare/logger";
+import { isAccountAvailable, TIME_CONSTANTS } from "@ccproxy/core";
+import { Logger } from "@ccproxy/logger";
 import type {
 	Account,
 	LoadBalancingStrategy,
 	RequestMeta,
 	StrategyStore,
-} from "@ccflare/types";
+} from "@ccproxy/types";
 
 export class SessionStrategy implements LoadBalancingStrategy {
 	private sessionDurationMs: number;

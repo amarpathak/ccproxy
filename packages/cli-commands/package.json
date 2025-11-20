@@ -1,5 +1,5 @@
 {
-	"name": "@ccflare/cli-commands",
+	"name": "@ccproxy/cli-commands",
 	"version": "0.1.0",
 	"type": "module",
 	"main": "./src/index.ts",
@@ -10,12 +10,12 @@
 		"typecheck": "bunx tsc --noEmit"
 	},
 	"dependencies": {
-		"@ccflare/core": "workspace:*",
-		"@ccflare/core-di": "workspace:*",
-		"@ccflare/database": "workspace:*",
-		"@ccflare/config": "workspace:*",
-		"@ccflare/providers": "workspace:*",
-		"@ccflare/oauth-flow": "workspace:*",
+		"@ccproxy/core": "workspace:*",
+		"@ccproxy/core-di": "workspace:*",
+		"@ccproxy/database": "workspace:*",
+		"@ccproxy/config": "workspace:*",
+		"@ccproxy/providers": "workspace:*",
+		"@ccproxy/oauth-flow": "workspace:*",
 		"open": "^10.0.0"
 	}
 }

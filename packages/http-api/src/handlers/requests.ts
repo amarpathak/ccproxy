@@ -1,6 +1,6 @@
 import type { Database } from "bun:sqlite";
-import type { DatabaseOperations } from "@ccflare/database";
-import { jsonResponse } from "@ccflare/http-common";
+import type { DatabaseOperations } from "@ccproxy/database";
+import { jsonResponse } from "@ccproxy/http-common";
 import type { RequestResponse } from "../types";
 
 /**

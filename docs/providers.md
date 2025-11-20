@@ -27,7 +27,7 @@
 
 ## Overview
 
-The ccflare providers system is a modular architecture designed to support multiple AI service providers through a unified interface. Currently, it implements support for Anthropic's services through a single provider that can operate in two modes:
+The ccproxy providers system is a modular architecture designed to support multiple AI service providers through a unified interface. Currently, it implements support for Anthropic's services through a single provider that can operate in two modes:
 
 ### Supported Providers
 
@@ -293,7 +293,7 @@ The BaseProvider abstract class provides default implementations for common func
 
 ## Account Tier System
 
-ccflare supports three account tiers based on Anthropic's subscription levels:
+ccproxy supports three account tiers based on Anthropic's subscription levels:
 
 | Tier | Value | Rate Limit | Description |
 |------|-------|------------|-------------|

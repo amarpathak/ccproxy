@@ -1,5 +1,5 @@
-import { DEFAULT_AGENT_MODEL, getModelDisplayName } from "@ccflare/core";
-import { ALLOWED_MODELS } from "@ccflare/types";
+import { DEFAULT_AGENT_MODEL, getModelDisplayName } from "@ccproxy/core";
+import { ALLOWED_MODELS } from "@ccproxy/types";
 import {
 	AlertCircle,
 	Bot,

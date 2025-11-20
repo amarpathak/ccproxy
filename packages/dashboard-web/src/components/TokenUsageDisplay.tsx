@@ -1,4 +1,4 @@
-import { processTokenUsage } from "@ccflare/ui-common";
+import { processTokenUsage } from "@ccproxy/ui-common";
 import type { RequestSummary } from "../api";
 
 interface TokenUsageDisplayProps {

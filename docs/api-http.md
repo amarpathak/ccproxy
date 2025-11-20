@@ -1,4 +1,4 @@
-# ccflare HTTP API Documentation
+# ccproxy HTTP API Documentation
 
 ## Quick Start
 
@@ -25,7 +25,7 @@ open http://localhost:8080/dashboard
 
 ## Overview
 
-ccflare provides a RESTful HTTP API for managing accounts, monitoring usage, and proxying requests to Claude. The API runs on port 8080 by default and requires no authentication.
+ccproxy provides a RESTful HTTP API for managing accounts, monitoring usage, and proxying requests to Claude. The API runs on port 8080 by default and requires no authentication.
 
 ### Base URL
 
@@ -43,7 +43,7 @@ All API responses are in JSON format with `Content-Type: application/json`.
 
 #### GET /health
 
-Check the health status of the ccflare service.
+Check the health status of the ccproxy service.
 
 **Response:**
 ```json
@@ -73,11 +73,11 @@ Proxy requests to Claude API. All requests to paths starting with `/v1/` are for
 - `POST /v1/complete` - Text completion (legacy)
 - Any other Claude API v1 endpoint
 
-**Note:** There is no `/v1/models` endpoint provided by ccflare. Model listing would need to be done directly through Claude's API if such an endpoint exists.
+**Note:** There is no `/v1/models` endpoint provided by ccproxy. Model listing would need to be done directly through Claude's API if such an endpoint exists.
 
 **Headers:**
 - All standard Claude API headers are supported
-- `Authorization` header is managed by ccflare (no need to provide)
+- `Authorization` header is managed by ccproxy (no need to provide)
 
 **Request Body:**
 Same as Claude API requirements for the specific endpoint.
@@ -86,7 +86,7 @@ Same as Claude API requirements for the specific endpoint.
 Proxied response from Claude API, including streaming responses.
 
 **Automatic Failover:**
-If a request fails or an account is rate limited, ccflare automatically retries with the next available account according to the configured load balancing strategy. This ensures high availability and reliability.
+If a request fails or an account is rate limited, ccproxy automatically retries with the next available account according to the configured load balancing strategy. This ensures high availability and reliability.
 
 **Example:**
 ```bash
@@ -750,7 +750,7 @@ All API errors follow a consistent format:
 
 ### Rate Limiting
 
-When an account hits rate limits, ccflare automatically fails over to the next available account. If all accounts are rate limited, a 503 error is returned.
+When an account hits rate limits, ccproxy automatically fails over to the next available account. If all accounts are rate limited, a 503 error is returned.
 
 Rate limit information is included in account responses:
 - `rateLimitStatus` - Current status (e.g., "allowed", "allowed_warning", "rate_limited")
@@ -768,7 +768,7 @@ The proxy endpoints support streaming responses for compatible Claude API calls.
 3. Each chunk is delivered as a Server-Sent Event
 
 **Streaming Response Capture:**
-ccflare automatically captures streaming response bodies for analytics and debugging purposes:
+ccproxy automatically captures streaming response bodies for analytics and debugging purposes:
 - Captured data is limited to `CF_STREAM_BODY_MAX_BYTES` (default: 256KB)
 - The capture process doesn't interfere with the client's stream
 - Captured bodies are stored base64-encoded in the request history
@@ -810,7 +810,7 @@ The dashboard provides a visual interface for:
 
 ### Environment Variables
 
-ccflare can be configured using the following environment variables:
+ccproxy can be configured using the following environment variables:
 
 - `PORT` - Server port (default: 8080)
 - `LB_STRATEGY` - Load balancing strategy (default: session)
@@ -823,10 +823,10 @@ ccflare can be configured using the following environment variables:
 
 ### Configuration File
 
-In addition to environment variables, ccflare supports configuration through a JSON file. The config file location varies by platform:
-- macOS: `~/Library/Application Support/ccflare/config.json`
-- Linux: `~/.config/ccflare/config.json`
-- Windows: `%APPDATA%\ccflare\config.json`
+In addition to environment variables, ccproxy supports configuration through a JSON file. The config file location varies by platform:
+- macOS: `~/Library/Application Support/ccproxy/config.json`
+- Linux: `~/.config/ccproxy/config.json`
+- Windows: `%APPDATA%\ccproxy\config.json`
 
 **Supported Configuration Keys:**
 ```json
@@ -853,9 +853,9 @@ The following strategy is available:
 
 ## Notes
 
-1. **No Authentication**: The API endpoints do not require authentication. ccflare manages the OAuth tokens internally for proxying to Claude.
+1. **No Authentication**: The API endpoints do not require authentication. ccproxy manages the OAuth tokens internally for proxying to Claude.
 
-2. **Automatic Failover**: When a request fails or an account is rate limited, ccflare automatically tries the next available account. If no accounts are available, requests are forwarded without authentication as a fallback.
+2. **Automatic Failover**: When a request fails or an account is rate limited, ccproxy automatically tries the next available account. If no accounts are available, requests are forwarded without authentication as a fallback.
 
 3. **Token Refresh**: Access tokens are automatically refreshed when they expire.
 

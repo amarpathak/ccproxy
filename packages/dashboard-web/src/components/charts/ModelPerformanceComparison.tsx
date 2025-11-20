@@ -1,5 +1,5 @@
-import { getModelShortName } from "@ccflare/core";
-import { formatCost, formatTokensPerSecond } from "@ccflare/ui-common";
+import { getModelShortName } from "@ccproxy/core";
+import { formatCost, formatTokensPerSecond } from "@ccproxy/ui-common";
 import {
 	Area,
 	AreaChart,

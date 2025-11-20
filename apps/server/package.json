@@ -1,24 +1,24 @@
 {
-	"name": "@ccflare/server",
+	"name": "@ccproxy/server",
 	"version": "0.1.0",
 	"type": "module",
 	"main": "./src/server.ts",
 	"scripts": {
 		"dev": "bun run --hot src/server.ts",
 		"start": "bun run src/server.ts",
-		"build": "bun build src/server.ts --compile --outfile dist/ccflare-server",
+		"build": "bun build src/server.ts --compile --outfile dist/ccproxy-server",
 		"typecheck": "bunx tsc --noEmit"
 	},
 	"dependencies": {
-		"@ccflare/core": "workspace:*",
-		"@ccflare/core-di": "workspace:*",
-		"@ccflare/database": "workspace:*",
-		"@ccflare/config": "workspace:*",
-		"@ccflare/logger": "workspace:*",
-		"@ccflare/load-balancer": "workspace:*",
-		"@ccflare/proxy": "workspace:*",
-		"@ccflare/dashboard-web": "workspace:*",
-		"@ccflare/http-api": "workspace:*",
-		"@ccflare/types": "workspace:*"
+		"@ccproxy/core": "workspace:*",
+		"@ccproxy/core-di": "workspace:*",
+		"@ccproxy/database": "workspace:*",
+		"@ccproxy/config": "workspace:*",
+		"@ccproxy/logger": "workspace:*",
+		"@ccproxy/load-balancer": "workspace:*",
+		"@ccproxy/proxy": "workspace:*",
+		"@ccproxy/dashboard-web": "workspace:*",
+		"@ccproxy/http-api": "workspace:*",
+		"@ccproxy/types": "workspace:*"
 	}
 }

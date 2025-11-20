@@ -1,5 +1,5 @@
-import { requestEvents, ServiceUnavailableError } from "@ccflare/core";
-import { Logger } from "@ccflare/logger";
+import { requestEvents, ServiceUnavailableError } from "@ccproxy/core";
+import { Logger } from "@ccproxy/logger";
 import {
 	createRequestMetadata,
 	ERROR_MESSAGES,

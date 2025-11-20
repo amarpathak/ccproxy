@@ -1,5 +1,5 @@
 {
-	"name": "@ccflare/http-common",
+	"name": "@ccproxy/http-common",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -11,8 +11,8 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@ccflare/types": "workspace:*",
-		"@ccflare/errors": "workspace:*"
+		"@ccproxy/types": "workspace:*",
+		"@ccproxy/errors": "workspace:*"
 	},
 	"devDependencies": {
 		"@types/node": "^22.10.2",

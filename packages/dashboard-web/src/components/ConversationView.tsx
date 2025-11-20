@@ -1,10 +1,10 @@
-import type { MessageData } from "@ccflare/types";
+import type { MessageData } from "@ccproxy/types";
 import {
 	cleanLineNumbers,
 	genMessageKey,
 	parseAssistantMessage,
 	parseRequestMessages,
-} from "@ccflare/ui-common";
+} from "@ccproxy/ui-common";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Message } from "./conversation";
 

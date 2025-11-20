@@ -1,21 +1,21 @@
 import type { Database } from "bun:sqlite";
-import * as cliCommands from "@ccflare/cli-commands";
-import type { Config } from "@ccflare/config";
+import * as cliCommands from "@ccproxy/cli-commands";
+import type { Config } from "@ccproxy/config";
 import {
 	patterns,
 	sanitizers,
 	validateNumber,
 	validateString,
-} from "@ccflare/core";
-import type { DatabaseOperations } from "@ccflare/database";
+} from "@ccproxy/core";
+import type { DatabaseOperations } from "@ccproxy/database";
 import {
 	BadRequest,
 	errorResponse,
 	InternalServerError,
 	jsonResponse,
 	NotFound,
-} from "@ccflare/http-common";
-import { Logger } from "@ccflare/logger";
+} from "@ccproxy/http-common";
+import { Logger } from "@ccproxy/logger";
 import type { AccountResponse } from "../types";
 
 const log = new Logger("AccountsHandler");

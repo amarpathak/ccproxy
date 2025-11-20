@@ -67,12 +67,12 @@ export interface WorkerResponse {
 // Worker to main thread messages
 export interface SummaryMessage {
 	type: "summary";
-	summary: import("@ccflare/types").RequestResponse;
+	summary: import("@ccproxy/types").RequestResponse;
 }
 
 export interface PayloadMessage {
 	type: "payload";
-	payload: import("@ccflare/types").RequestPayload;
+	payload: import("@ccproxy/types").RequestPayload;
 }
 
 export type OutgoingWorkerMessage = SummaryMessage | PayloadMessage;

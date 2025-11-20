@@ -3,7 +3,7 @@ import {
 	formatDuration,
 	formatTokens,
 	formatTokensPerSecond,
-} from "@ccflare/ui-common";
+} from "@ccproxy/ui-common";
 import {
 	Bot,
 	Calendar,

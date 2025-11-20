@@ -3,7 +3,7 @@
  */
 export function getHelpText(): string {
 	return `
-Usage: ccflare-cli <command> [options]
+Usage: ccproxy-cli <command> [options]
 
 Commands:
   add <name> [--mode <max|console>] [--tier <1|5|20>]
@@ -37,10 +37,10 @@ Commands:
     Show this help message
 
 Examples:
-  ccflare-cli add myaccount --mode max --tier 5
-  ccflare-cli list
-  ccflare-cli remove myaccount
-  ccflare-cli pause myaccount
-  ccflare-cli resume myaccount
+  ccproxy-cli add myaccount --mode max --tier 5
+  ccproxy-cli list
+  ccproxy-cli remove myaccount
+  ccproxy-cli pause myaccount
+  ccproxy-cli resume myaccount
 `;
 }

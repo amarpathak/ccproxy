@@ -25,7 +25,7 @@ const routes = [
 		path: "/",
 		element: <OverviewTab />,
 		title: "Dashboard Overview",
-		subtitle: "Monitor your ccflare performance and usage",
+		subtitle: "Monitor your ccproxy performance and usage",
 	},
 	{
 		path: "/analytics",

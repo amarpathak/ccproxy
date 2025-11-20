@@ -1,14 +1,14 @@
-import { Config } from "@ccflare/config";
-import { patterns, validateNumber, validateString } from "@ccflare/core";
-import type { DatabaseOperations } from "@ccflare/database";
+import { Config } from "@ccproxy/config";
+import { patterns, validateNumber, validateString } from "@ccproxy/core";
+import type { DatabaseOperations } from "@ccproxy/database";
 import {
 	BadRequest,
 	errorResponse,
 	InternalServerError,
 	jsonResponse,
-} from "@ccflare/http-common";
-import { Logger } from "@ccflare/logger";
-import { createOAuthFlow } from "@ccflare/oauth-flow";
+} from "@ccproxy/http-common";
+import { Logger } from "@ccproxy/logger";
+import { createOAuthFlow } from "@ccproxy/oauth-flow";
 
 const log = new Logger("OAuthHandler");
 
@@ -139,7 +139,7 @@ export function createOAuthCallbackHandler(dbOps: DatabaseOperations) {
 
 				// We need to reconstruct the flow data since we can't pass the full BeginResult through HTTP
 				// The OAuth flow will handle the token exchange and account creation
-				const oauthProvider = await import("@ccflare/providers").then((m) =>
+				const oauthProvider = await import("@ccproxy/providers").then((m) =>
 					m.getOAuthProvider("anthropic"),
 				);
 				if (!oauthProvider) {

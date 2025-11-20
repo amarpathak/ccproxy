@@ -1,14 +1,14 @@
-import { agentRegistry } from "@ccflare/agents";
-import { validateString } from "@ccflare/core";
-import type { DatabaseOperations } from "@ccflare/database";
+import { agentRegistry } from "@ccproxy/agents";
+import { validateString } from "@ccproxy/core";
+import type { DatabaseOperations } from "@ccproxy/database";
 import {
 	BadRequest,
 	errorResponse,
 	HttpError,
 	jsonResponse,
-} from "@ccflare/http-common";
-import { Logger } from "@ccflare/logger";
-import { ALLOWED_MODELS } from "@ccflare/types";
+} from "@ccproxy/http-common";
+import { Logger } from "@ccproxy/logger";
+import { ALLOWED_MODELS } from "@ccproxy/types";
 
 const log = new Logger("AgentsHandler");
 

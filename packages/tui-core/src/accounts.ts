@@ -1,9 +1,9 @@
-import * as cliCommands from "@ccflare/cli-commands";
-import { openBrowser } from "@ccflare/cli-commands";
-import { Config } from "@ccflare/config";
-import { DatabaseFactory } from "@ccflare/database";
-import { type BeginResult, createOAuthFlow } from "@ccflare/oauth-flow";
-import type { AccountListItem, AddAccountOptions } from "@ccflare/types";
+import * as cliCommands from "@ccproxy/cli-commands";
+import { openBrowser } from "@ccproxy/cli-commands";
+import { Config } from "@ccproxy/config";
+import { DatabaseFactory } from "@ccproxy/database";
+import { type BeginResult, createOAuthFlow } from "@ccproxy/oauth-flow";
+import type { AccountListItem, AddAccountOptions } from "@ccproxy/types";
 
 export interface OAuthFlowResult extends BeginResult {
 	// Extends BeginResult from oauth-flow package

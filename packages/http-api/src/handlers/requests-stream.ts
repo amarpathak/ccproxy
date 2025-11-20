@@ -1,4 +1,4 @@
-import { type RequestEvt, requestEvents } from "@ccflare/core";
+import { type RequestEvt, requestEvents } from "@ccproxy/core";
 
 export function createRequestsStreamHandler() {
 	return (): Response => {
