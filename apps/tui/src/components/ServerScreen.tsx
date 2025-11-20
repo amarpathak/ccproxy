@@ -1,5 +1,5 @@
-import { NETWORK } from "@ccproxy/core";
 import { Config } from "@ccproxy/config";
+import { NETWORK } from "@ccproxy/core";
 import { Box, Text, useInput } from "ink";
 
 interface ServerScreenProps {
