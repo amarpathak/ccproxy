@@ -112,6 +112,21 @@ export class AnthropicProvider extends BaseProvider {
 		// Set authentication header
 		if (accessToken) {
 			newHeaders.set("Authorization", `Bearer ${accessToken}`);
+
+			// Add OAuth beta flag when using OAuth authentication
+			// This enables Anthropic's OAuth beta feature
+			const existingBeta = newHeaders.get("anthropic-beta");
+			const oauthFlag = "oauth-2025-04-20";
+
+			if (existingBeta) {
+				// Append oauth flag if not already present
+				if (!existingBeta.includes(oauthFlag)) {
+					newHeaders.set("anthropic-beta", `${existingBeta},${oauthFlag}`);
+				}
+			} else {
+				// Set oauth flag as the only beta flag
+				newHeaders.set("anthropic-beta", oauthFlag);
+			}
 		} else if (apiKey) {
 			newHeaders.set("x-api-key", apiKey);
 		}
