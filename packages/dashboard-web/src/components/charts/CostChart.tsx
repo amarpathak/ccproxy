@@ -1,4 +1,4 @@
-import { formatCost } from "@ccflare/ui-common";
+import { formatCost } from "@ccproxy/ui-common";
 import { COLORS } from "../../constants";
 import { formatCompactCurrency } from "../../lib/chart-utils";
 import { BaseAreaChart } from "./BaseAreaChart";

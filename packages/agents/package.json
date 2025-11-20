@@ -1,7 +1,7 @@
 {
-	"name": "@ccflare/agents",
+	"name": "@ccproxy/agents",
 	"version": "1.0.0",
-	"description": "Agent discovery and management for ccflare",
+	"description": "Agent discovery and management for ccproxy",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
@@ -13,9 +13,9 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@ccflare/config": "workspace:*",
-		"@ccflare/logger": "workspace:*",
-		"@ccflare/types": "workspace:*"
+		"@ccproxy/config": "workspace:*",
+		"@ccproxy/logger": "workspace:*",
+		"@ccproxy/types": "workspace:*"
 	},
 	"devDependencies": {
 		"@types/node": "^22.5.4",

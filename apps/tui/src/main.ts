@@ -1,13 +1,13 @@
 #!/usr/bin/env bun
-import { Config } from "@ccflare/config";
-import { CLAUDE_MODEL_IDS, NETWORK, shutdown } from "@ccflare/core";
-import { container, SERVICE_KEYS } from "@ccflare/core-di";
-import { DatabaseFactory } from "@ccflare/database";
-import { Logger } from "@ccflare/logger";
+import { Config } from "@ccproxy/config";
+import { CLAUDE_MODEL_IDS, NETWORK, shutdown } from "@ccproxy/core";
+import { container, SERVICE_KEYS } from "@ccproxy/core-di";
+import { DatabaseFactory } from "@ccproxy/database";
+import { Logger } from "@ccproxy/logger";
 // Import server
-import startServer from "@ccflare/server";
-import * as tuiCore from "@ccflare/tui-core";
-import { parseArgs } from "@ccflare/tui-core";
+import startServer from "@ccproxy/server";
+import * as tuiCore from "@ccproxy/tui-core";
+import { parseArgs } from "@ccproxy/tui-core";
 import { render } from "ink";
 import React from "react";
 import { App } from "./App";
@@ -38,9 +38,9 @@ async function main() {
 	// Handle help
 	if (parsed.help) {
 		console.log(`
-🎯 ccflare - Load Balancer for Claude
+🎯 ccproxy - Load Balancer for Claude
 
-Usage: ccflare [options]
+Usage: ccproxy [options]
 
 Options:
   --serve              Start API server with dashboard
@@ -62,15 +62,15 @@ Options:
   --help, -h           Show this help message
 
 Interactive Mode:
-  ccflare          Launch interactive TUI (default)
+  ccproxy          Launch interactive TUI (default)
 
 Examples:
-  ccflare                        # Interactive mode
-  ccflare --serve                # Start server
-  ccflare --add-account work     # Add account
-  ccflare --pause work           # Pause account
-  ccflare --analyze              # Run performance analysis
-  ccflare --stats                # View stats
+  ccproxy                        # Interactive mode
+  ccproxy --serve                # Start server
+  ccproxy --add-account work     # Add account
+  ccproxy --pause work           # Pause account
+  ccproxy --analyze              # Run performance analysis
+  ccproxy --stats                # View stats
 `);
 		process.exit(0);
 	}

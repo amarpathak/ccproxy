@@ -1,13 +1,13 @@
-import type { Config } from "@ccflare/config";
-import type { DatabaseOperations } from "@ccflare/database";
+import type { Config } from "@ccproxy/config";
+import type { DatabaseOperations } from "@ccproxy/database";
 import {
 	generatePKCE,
 	getOAuthProvider,
 	type OAuthProviderConfig,
 	type OAuthTokens,
 	type PKCEChallenge,
-} from "@ccflare/providers";
-import type { AccountTier } from "@ccflare/types";
+} from "@ccproxy/providers";
+import type { AccountTier } from "@ccproxy/types";
 
 export interface BeginOptions {
 	name: string;

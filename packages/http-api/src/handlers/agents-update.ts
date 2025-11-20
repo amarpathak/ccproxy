@@ -1,8 +1,8 @@
-import { agentRegistry } from "@ccflare/agents";
-import type { DatabaseOperations } from "@ccflare/database";
-import { errorResponse, jsonResponse } from "@ccflare/http-common";
-import type { AgentTool, AllowedModel } from "@ccflare/types";
-import { ALLOWED_MODELS, TOOL_PRESETS } from "@ccflare/types";
+import { agentRegistry } from "@ccproxy/agents";
+import type { DatabaseOperations } from "@ccproxy/database";
+import { errorResponse, jsonResponse } from "@ccproxy/http-common";
+import type { AgentTool, AllowedModel } from "@ccproxy/types";
+import { ALLOWED_MODELS, TOOL_PRESETS } from "@ccproxy/types";
 
 type ToolMode = keyof typeof TOOL_PRESETS | "custom";
 

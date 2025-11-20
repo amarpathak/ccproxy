@@ -1,6 +1,6 @@
-# ccflare CLI Documentation
+# ccproxy CLI Documentation
 
-The ccflare CLI provides a command-line interface for managing OAuth accounts, monitoring usage statistics, and controlling the load balancer.
+The ccproxy CLI provides a command-line interface for managing OAuth accounts, monitoring usage statistics, and controlling the load balancer.
 
 ## Table of Contents
 
@@ -27,8 +27,8 @@ The ccflare CLI provides a command-line interface for managing OAuth accounts, m
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/snipe-code/ccflare.git
-cd ccflare
+git clone https://github.com/snipe-code/ccproxy.git
+cd ccproxy
 ```
 
 2. Install dependencies:
@@ -43,19 +43,19 @@ bun run build
 
 4. Run the CLI:
 ```bash
-ccflare [options]
+ccproxy [options]
 ```
 
 ### First-time Setup
 
 1. Add your first OAuth account:
 ```bash
-ccflare --add-account myaccount
+ccproxy --add-account myaccount
 ```
 
 2. Start the load balancer server:
 ```bash
-ccflare --serve
+ccproxy --serve
 ```
 
 ## Global Options and Help
@@ -65,21 +65,21 @@ ccflare --serve
 Display all available commands and options:
 
 ```bash
-ccflare --help
+ccproxy --help
 ```
 
 Or use the short form:
 
 ```bash
-ccflare -h
+ccproxy -h
 ```
 
 ### Help Output Format
 
 ```
-🎯 ccflare - Load Balancer for Claude
+🎯 ccproxy - Load Balancer for Claude
 
-Usage: ccflare [options]
+Usage: ccproxy [options]
 
 Options:
   --serve              Start API server with dashboard
@@ -99,7 +99,7 @@ Options:
   --help, -h           Show this help message
 
 Interactive Mode:
-  ccflare          Launch interactive TUI (default)
+  ccproxy          Launch interactive TUI (default)
 ```
 
 ## Command Reference
@@ -112,7 +112,7 @@ Add a new OAuth account to the load balancer pool.
 
 **Syntax:**
 ```bash
-ccflare --add-account <name> [--mode <max|console>] [--tier <1|5|20>]
+ccproxy --add-account <name> [--mode <max|console>] [--tier <1|5|20>]
 ```
 
 **Options:**
@@ -137,7 +137,7 @@ Display all configured accounts with their current status.
 
 **Syntax:**
 ```bash
-ccflare --list
+ccproxy --list
 ```
 
 **Output Format:**
@@ -153,13 +153,13 @@ Remove an account from the configuration.
 
 **Syntax:**
 ```bash
-ccflare --remove <name>
+ccproxy --remove <name>
 ```
 
 **Behavior:**
 - Removes account from database immediately
 - Cleans up associated session data
-- For confirmation prompts, use the older `ccflare-cli remove <name>` command
+- For confirmation prompts, use the older `ccproxy-cli remove <name>` command
 
 #### `--pause <name>`
 
@@ -167,7 +167,7 @@ Temporarily exclude an account from the load balancer rotation.
 
 **Syntax:**
 ```bash
-ccflare --pause <name>
+ccproxy --pause <name>
 ```
 
 **Use Cases:**
@@ -181,7 +181,7 @@ Re-enable a paused account for load balancing.
 
 **Syntax:**
 ```bash
-ccflare --resume <name>
+ccproxy --resume <name>
 ```
 
 ### Statistics and History
@@ -192,7 +192,7 @@ Display current statistics in JSON format.
 
 **Syntax:**
 ```bash
-ccflare --stats
+ccproxy --stats
 ```
 
 **Output:**
@@ -204,7 +204,7 @@ Reset request counters for all accounts.
 
 **Syntax:**
 ```bash
-ccflare --reset-stats
+ccproxy --reset-stats
 ```
 
 **Effects:**
@@ -218,7 +218,7 @@ Remove all request history records.
 
 **Syntax:**
 ```bash
-ccflare --clear-history
+ccproxy --clear-history
 ```
 
 **Effects:**
@@ -234,7 +234,7 @@ Analyze database performance and index usage.
 
 **Syntax:**
 ```bash
-ccflare --analyze
+ccproxy --analyze
 ```
 
 **Output:**
@@ -247,7 +247,7 @@ ccflare --analyze
 Launch the interactive terminal interface (default mode):
 
 ```bash
-ccflare
+ccproxy
 ```
 
 **Features:**
@@ -264,7 +264,7 @@ Start the API server with dashboard.
 
 **Syntax:**
 ```bash
-ccflare --serve [--port <number>]
+ccproxy --serve [--port <number>]
 ```
 
 **Options:**
@@ -280,7 +280,7 @@ Stream request logs in real-time.
 
 **Syntax:**
 ```bash
-ccflare --logs [N]
+ccproxy --logs [N]
 ```
 
 **Options:**
@@ -289,10 +289,10 @@ ccflare --logs [N]
 **Examples:**
 ```bash
 # Stream live logs only
-ccflare --logs
+ccproxy --logs
 
 # Show last 50 lines then stream
-ccflare --logs 50
+ccproxy --logs 50
 ```
 
 ## Usage Examples
@@ -301,65 +301,65 @@ ccflare --logs 50
 
 ```bash
 # Add a Claude Max account with tier 5
-ccflare --add-account work-account --mode max --tier 5
+ccproxy --add-account work-account --mode max --tier 5
 
 # Add a Console account
-ccflare --add-account personal-account --mode console
+ccproxy --add-account personal-account --mode console
 
 # List all accounts
-ccflare --list
+ccproxy --list
 
 # View statistics
-ccflare --stats
+ccproxy --stats
 ```
 
 ### Server Operations
 
 ```bash
 # Start server on default port
-ccflare --serve
+ccproxy --serve
 
 # Start server on custom port
-ccflare --serve --port 3000
+ccproxy --serve --port 3000
 
 # Stream logs
-ccflare --logs
+ccproxy --logs
 
 # View last 100 lines then stream
-ccflare --logs 100
+ccproxy --logs 100
 ```
 
 ### Managing Rate Limits
 
 ```bash
 # Pause account hitting rate limits
-ccflare --pause work-account
+ccproxy --pause work-account
 
 # Resume after cooldown
-ccflare --resume work-account
+ccproxy --resume work-account
 
 # Reset statistics for fresh start
-ccflare --reset-stats
+ccproxy --reset-stats
 ```
 
 ### Maintenance Operations
 
 ```bash
 # Remove account
-ccflare --remove old-account
+ccproxy --remove old-account
 
 # Clear old request logs
-ccflare --clear-history
+ccproxy --clear-history
 
 # Analyze database performance
-ccflare --analyze
+ccproxy --analyze
 ```
 
 ### Interactive Mode
 
 ```bash
 # Launch interactive TUI (default)
-ccflare
+ccproxy
 
 # TUI launches with auto-started server
 # Navigate with arrow keys, tab between sections
@@ -370,43 +370,43 @@ ccflare
 ```bash
 # Add multiple accounts via script
 for i in {1..3}; do
-  ccflare --add-account "account-$i" --mode max --tier 5
+  ccproxy --add-account "account-$i" --mode max --tier 5
 done
 
 # Monitor account status
-watch -n 5 'ccflare --list'
+watch -n 5 'ccproxy --list'
 
 # Automated cleanup
-ccflare --clear-history && ccflare --reset-stats
+ccproxy --clear-history && ccproxy --reset-stats
 
 # Export statistics for monitoring
-ccflare --stats > stats.json
+ccproxy --stats > stats.json
 ```
 
 ## Configuration
 
 ### Configuration File Location
 
-ccflare stores its configuration in platform-specific directories:
+ccproxy stores its configuration in platform-specific directories:
 
 #### macOS/Linux
 ```
-~/.config/ccflare/ccflare.json
+~/.config/ccproxy/ccproxy.json
 ```
 
 Or if `XDG_CONFIG_HOME` is set:
 ```
-$XDG_CONFIG_HOME/ccflare/ccflare.json
+$XDG_CONFIG_HOME/ccproxy/ccproxy.json
 ```
 
 #### Windows
 ```
-%LOCALAPPDATA%\ccflare\ccflare.json
+%LOCALAPPDATA%\ccproxy\ccproxy.json
 ```
 
 Or fallback to:
 ```
-%APPDATA%\ccflare\ccflare.json
+%APPDATA%\ccproxy\ccproxy.json
 ```
 
 ### Configuration Structure
@@ -426,8 +426,8 @@ Or fallback to:
 ### Database Location
 
 The SQLite database follows the same directory structure:
-- **macOS/Linux**: `~/.config/ccflare/ccflare.db`
-- **Windows**: `%LOCALAPPDATA%\ccflare\ccflare.db`
+- **macOS/Linux**: `~/.config/ccproxy/ccproxy.db`
+- **Windows**: `%LOCALAPPDATA%\ccproxy\ccproxy.db`
 
 ## Environment Variables
 
@@ -435,8 +435,8 @@ The SQLite database follows the same directory structure:
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `ccflare_CONFIG_PATH` | Override config file location | Platform default |
-| `ccflare_DB_PATH` | Override database location | Platform default |
+| `ccproxy_CONFIG_PATH` | Override config file location | Platform default |
+| `ccproxy_DB_PATH` | Override database location | Platform default |
 | `PORT` | Server port | 8080 |
 | `CLIENT_ID` | OAuth client ID | 9d1c250a-e61b-44d9-88ed-5944d1962f5e |
 
@@ -466,7 +466,7 @@ The SQLite database follows the same directory structure:
 |----------|-------------|---------|
 | `LOG_LEVEL` | Log verbosity (DEBUG/INFO/WARN/ERROR) | INFO |
 | `LOG_FORMAT` | Output format (pretty/json) | pretty |
-| `ccflare_DEBUG` | Enable debug mode (1/0) - enables console output | 0 |
+| `ccproxy_DEBUG` | Enable debug mode (1/0) - enables console output | 0 |
 
 ### Pricing and Features
 
@@ -513,12 +513,12 @@ The SQLite database follows the same directory structure:
 **Problem**: "Database is locked" or corruption errors
 
 **Solutions**:
-1. Stop all ccflare processes
+1. Stop all ccproxy processes
 2. Check file permissions on database
 3. Backup and recreate if corrupted:
    ```bash
-   cp ~/.config/ccflare/ccflare.db ~/.config/ccflare/ccflare.db.backup
-   rm ~/.config/ccflare/ccflare.db
+   cp ~/.config/ccproxy/ccproxy.db ~/.config/ccproxy/ccproxy.db.backup
+   rm ~/.config/ccproxy/ccproxy.db
    ```
 
 ### Debug Mode
@@ -527,14 +527,14 @@ Enable detailed logging for troubleshooting:
 
 ```bash
 # Enable debug logging
-export ccflare_DEBUG=1
+export ccproxy_DEBUG=1
 export LOG_LEVEL=DEBUG
 
 # Run with verbose output
-ccflare --list
+ccproxy --list
 
 # Stream debug logs
-ccflare --logs
+ccproxy --logs
 ```
 
 ### Getting Support
@@ -549,8 +549,8 @@ ccflare --logs
 1. **Regular Maintenance**
    - Clear history periodically to manage database size
    - Reset stats monthly for accurate metrics
-   - Monitor account health with regular `ccflare --list` commands
-   - Use `ccflare --analyze` to optimize database performance
+   - Monitor account health with regular `ccproxy --list` commands
+   - Use `ccproxy --analyze` to optimize database performance
 
 2. **Account Management**
    - Use descriptive account names
@@ -562,10 +562,10 @@ ccflare --logs
    - Protect configuration directory permissions
    - Don't share OAuth tokens or session data
    - Rotate accounts periodically
-   - Monitor logs with `ccflare --logs` for suspicious activity
+   - Monitor logs with `ccproxy --logs` for suspicious activity
 
 4. **Performance**
    - Use higher-tier accounts for heavy workloads
    - Implement client-side retry logic
-   - Monitor rate limit patterns with `ccflare --stats`
-   - Run server with `ccflare --serve` for production use
+   - Monitor rate limit patterns with `ccproxy --stats`
+   - Run server with `ccproxy --serve` for production use

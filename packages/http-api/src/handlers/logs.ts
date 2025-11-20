@@ -1,6 +1,6 @@
-import { sseResponse } from "@ccflare/http-common";
-import { Logger, logBus } from "@ccflare/logger";
-import type { LogEvent } from "@ccflare/types";
+import { sseResponse } from "@ccproxy/http-common";
+import { Logger, logBus } from "@ccproxy/logger";
+import type { LogEvent } from "@ccproxy/types";
 
 const log = new Logger("LogsHandler");
 

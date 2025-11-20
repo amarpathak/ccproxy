@@ -1,4 +1,4 @@
-# Load Balancing in ccflare
+# Load Balancing in ccproxy
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -10,7 +10,7 @@
 
 ## Overview
 
-ccflare implements a session-based load balancing system to distribute requests across multiple Claude OAuth accounts, avoiding rate limits and ensuring high availability. The system maintains configurable sessions (default: 5 hours) with individual accounts to minimize rate limit issues.
+ccproxy implements a session-based load balancing system to distribute requests across multiple Claude OAuth accounts, avoiding rate limits and ensuring high availability. The system maintains configurable sessions (default: 5 hours) with individual accounts to minimize rate limit issues.
 
 ### Key Features
 - **Account Health Monitoring**: Automatically filters out rate-limited or paused accounts
@@ -21,7 +21,7 @@ ccflare implements a session-based load balancing system to distribute requests 
 
 ## Session-Based Strategy
 
-**Description**: Maintains sticky sessions with individual accounts for a configurable duration (default: 5 hours). This is the only load balancing strategy available in ccflare, designed to minimize account switching and reduce the likelihood of hitting rate limits.
+**Description**: Maintains sticky sessions with individual accounts for a configurable duration (default: 5 hours). This is the only load balancing strategy available in ccproxy, designed to minimize account switching and reduce the likelihood of hitting rate limits.
 
 **Use Case**: Optimal for production environments where minimizing rate limits is crucial. Particularly effective for applications with sustained user sessions.
 
@@ -86,11 +86,11 @@ export class SessionStrategy implements LoadBalancingStrategy {
 
 ## Configuration
 
-ccflare uses a hierarchical configuration system where environment variables take precedence over configuration file settings.
+ccproxy uses a hierarchical configuration system where environment variables take precedence over configuration file settings.
 
 ### Configuration Precedence (highest to lowest)
 1. Environment variables
-2. Configuration file (`~/.ccflare/config.json`)
+2. Configuration file (`~/.ccproxy/config.json`)
 3. Default values
 
 ### Environment Variables
@@ -116,7 +116,7 @@ RETRY_BACKOFF=2
 
 ### Configuration File
 
-The configuration file is automatically created at `~/.ccflare/config.json` on first run:
+The configuration file is automatically created at `~/.ccproxy/config.json` on first run:
 
 ```json
 {
@@ -247,7 +247,7 @@ Monitor these key metrics:
 
 ## Important: Why Only Session-Based Strategy
 
-**⚠️ WARNING: Only the session-based load balancer strategy is available in ccflare.**
+**⚠️ WARNING: Only the session-based load balancer strategy is available in ccproxy.**
 
 Other strategies like round-robin, least-requests, or weighted distribution have been removed from the codebase as they can trigger Claude's anti-abuse systems and result in automatic account bans. Here's why they were removed:
 

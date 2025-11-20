@@ -1,11 +1,11 @@
-import { getModelDisplayName } from "@ccflare/core";
+import { getModelDisplayName } from "@ccproxy/core";
 import type {
 	Agent,
 	AgentTool,
 	AgentUpdatePayload,
 	AllowedModel,
-} from "@ccflare/types";
-import { ALL_TOOLS, ALLOWED_MODELS } from "@ccflare/types";
+} from "@ccproxy/types";
+import { ALL_TOOLS, ALLOWED_MODELS } from "@ccproxy/types";
 import { Cpu, Edit3, FileText, Palette, Save, Shield, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { TOOL_PRESETS } from "../../constants";

@@ -1,4 +1,4 @@
-import { CLAUDE_MODEL_IDS } from "@ccflare/core";
+import { CLAUDE_MODEL_IDS } from "@ccproxy/core";
 
 export type AgentSource = "global" | "workspace";
 

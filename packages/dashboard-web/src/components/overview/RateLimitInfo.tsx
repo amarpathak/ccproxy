@@ -1,4 +1,4 @@
-import type { AccountResponse } from "@ccflare/types";
+import type { AccountResponse } from "@ccproxy/types";
 import { format } from "date-fns";
 import { AlertCircle } from "lucide-react";
 import {

@@ -1,4 +1,4 @@
-import type { Account } from "@ccflare/types";
+import type { Account } from "@ccproxy/types";
 
 export interface TokenRefreshResult {
 	accessToken: string;

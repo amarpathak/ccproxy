@@ -9,4 +9,4 @@ export {
 	jsonResponse,
 	NotFound,
 	Unauthorized,
-} from "@ccflare/http-common";
+} from "@ccproxy/http-common";

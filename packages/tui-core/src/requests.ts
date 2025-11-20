@@ -1,5 +1,5 @@
-import { DatabaseFactory } from "@ccflare/database";
-import type { RequestPayload } from "@ccflare/types";
+import { DatabaseFactory } from "@ccproxy/database";
+import type { RequestPayload } from "@ccproxy/types";
 
 export type { RequestPayload };
 

@@ -1,7 +1,7 @@
 {
-	"name": "@ccflare/tui-core",
+	"name": "@ccproxy/tui-core",
 	"version": "1.0.0",
-	"description": "Core controller logic for ccflare TUI",
+	"description": "Core controller logic for ccproxy TUI",
 	"type": "module",
 	"main": "./src/index.ts",
 	"exports": {
@@ -11,14 +11,14 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@ccflare/cli-commands": "workspace:*",
-		"@ccflare/config": "workspace:*",
-		"@ccflare/database": "workspace:*",
-		"@ccflare/logger": "workspace:*",
-		"@ccflare/core": "workspace:*",
-		"@ccflare/oauth-flow": "workspace:*",
-		"@ccflare/providers": "workspace:*",
-		"@ccflare/types": "workspace:*"
+		"@ccproxy/cli-commands": "workspace:*",
+		"@ccproxy/config": "workspace:*",
+		"@ccproxy/database": "workspace:*",
+		"@ccproxy/logger": "workspace:*",
+		"@ccproxy/core": "workspace:*",
+		"@ccproxy/oauth-flow": "workspace:*",
+		"@ccproxy/providers": "workspace:*",
+		"@ccproxy/types": "workspace:*"
 	},
 	"devDependencies": {
 		"@types/node": "^20.0.0"

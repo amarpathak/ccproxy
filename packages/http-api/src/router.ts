@@ -1,4 +1,4 @@
-import { validateNumber } from "@ccflare/core";
+import { validateNumber } from "@ccproxy/core";
 import {
 	createAccountAddHandler,
 	createAccountPauseHandler,

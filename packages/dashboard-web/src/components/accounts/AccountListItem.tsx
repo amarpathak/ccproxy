@@ -1,4 +1,4 @@
-import { AccountPresenter } from "@ccflare/ui-common";
+import { AccountPresenter } from "@ccproxy/ui-common";
 import {
 	AlertCircle,
 	CheckCircle,

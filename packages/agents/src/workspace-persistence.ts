@@ -2,12 +2,12 @@ import { existsSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
 import { homedir } from "node:os";
 import { join } from "node:path";
-import { Logger } from "@ccflare/logger";
-import type { AgentWorkspace } from "@ccflare/types";
+import { Logger } from "@ccproxy/logger";
+import type { AgentWorkspace } from "@ccproxy/types";
 
 const log = new Logger("WorkspacePersistence");
 
-const WORKSPACES_FILE = join(homedir(), ".ccflare", "workspaces.json");
+const WORKSPACES_FILE = join(homedir(), ".ccproxy", "workspaces.json");
 
 interface WorkspacesData {
 	version: number;
@@ -48,7 +48,7 @@ export class WorkspacePersistence {
 			const content = JSON.stringify(data, null, 2);
 
 			// Ensure directory exists
-			const dir = join(homedir(), ".ccflare");
+			const dir = join(homedir(), ".ccproxy");
 			if (!existsSync(dir)) {
 				const { mkdir } = await import("node:fs/promises");
 				await mkdir(dir, { recursive: true });

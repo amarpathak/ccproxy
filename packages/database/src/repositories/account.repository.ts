@@ -1,4 +1,4 @@
-import { type Account, type AccountRow, toAccount } from "@ccflare/types";
+import { type Account, type AccountRow, toAccount } from "@ccproxy/types";
 import { BaseRepository } from "./base.repository";
 
 export class AccountRepository extends BaseRepository<Account> {

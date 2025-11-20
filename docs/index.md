@@ -1,4 +1,4 @@
-# ccflare Documentation
+# ccproxy Documentation
 
 ## Track Every Request. Go Low-Level. Never Hit Rate Limits Again.
 
@@ -9,11 +9,11 @@
 
 ## Overview
 
-ccflare is the ultimate Claude API proxy with intelligent load balancing across multiple accounts. Built with TypeScript and Bun runtime, it provides full visibility into every request, response, and rate limit, ensuring your AI applications never experience downtime due to rate limiting.
+ccproxy is the ultimate Claude API proxy with intelligent load balancing across multiple accounts. Built with TypeScript and Bun runtime, it provides full visibility into every request, response, and rate limit, ensuring your AI applications never experience downtime due to rate limiting.
 
-### Why ccflare?
+### Why ccproxy?
 
-When working with Claude API at scale, rate limits can become a significant bottleneck. ccflare solves this by:
+When working with Claude API at scale, rate limits can become a significant bottleneck. ccproxy solves this by:
 
 - **🚀 Zero Rate Limit Errors**: Automatically distributes requests across multiple accounts with intelligent failover
 - **📊 Request-Level Analytics**: Track latency, token usage, and costs in real-time with <10ms overhead
@@ -70,22 +70,22 @@ When working with Claude API at scale, rate limits can become a significant bott
 
 ## Quick Start
 
-### 1. Install ccflare
+### 1. Install ccproxy
 
 ```bash
 # Clone the repository
-git clone https://github.com/snipeship/ccflare.git
-cd ccflare
+git clone https://github.com/snipeship/ccproxy.git
+cd ccproxy
 
 # Install dependencies
 bun install
 ```
 
-### 2. Start ccflare (TUI + Server)
+### 2. Start ccproxy (TUI + Server)
 
 ```bash
-# Start ccflare with interactive TUI (automatically starts server)
-bun run ccflare
+# Start ccproxy with interactive TUI (automatically starts server)
+bun run ccproxy
 
 # Or start just the server without TUI
 bun run server
@@ -111,27 +111,27 @@ bun run apps/tui/src/main.ts --add-account personal-account
 bun run apps/tui/src/main.ts --add-account pro-account --mode max --tier 1
 bun run apps/tui/src/main.ts --add-account max-account --mode max --tier 5
 
-# Or if you have ccflare command available globally
-ccflare --add-account work-account
+# Or if you have ccproxy command available globally
+ccproxy --add-account work-account
 ```
 
 ### 4. Configure Your Claude Client
 
 ```bash
-# Set the base URL to use ccflare
+# Set the base URL to use ccproxy
 export ANTHROPIC_BASE_URL=http://localhost:8080
 ```
 
 ### 5. Monitor Your Usage
 
 - **Web Dashboard**: Open [http://localhost:8080/dashboard](http://localhost:8080/dashboard) for real-time analytics
-- **Terminal UI**: Use the interactive TUI started with `bun run ccflare`
+- **Terminal UI**: Use the interactive TUI started with `bun run ccproxy`
 - **CLI**: Check status with `bun run apps/tui/src/main.ts --list`
 
 ## Project Structure
 
 ```
-ccflare/
+ccproxy/
 ├── apps/               # Application packages
 │   ├── server/        # Main proxy server
 │   ├── tui/           # Terminal UI with integrated CLI
@@ -154,7 +154,7 @@ ccflare/
 
 ```bash
 # Main commands
-bun run ccflare        # Start TUI (builds dashboard first)
+bun run ccproxy        # Start TUI (builds dashboard first)
 bun run server         # Start server only
 bun run tui            # Start TUI only
 bun run start          # Alias for bun run server
@@ -176,7 +176,7 @@ bun run format         # Format code
 
 ## CLI Commands
 
-The ccflare CLI is integrated into the TUI application. All CLI functionality is accessed through the same executable:
+The ccproxy CLI is integrated into the TUI application. All CLI functionality is accessed through the same executable:
 
 ```bash
 # If running without global install, use the full path:
@@ -237,12 +237,12 @@ NODE_ENV=production            # Environment mode
 - [SQLite Documentation](https://www.sqlite.org/docs.html) - SQLite database docs
 
 ### Support
-- [GitHub Repository](https://github.com/snipeship/ccflare) - Source code and issues
-- [Contributing](./contributing.md) - How to contribute to ccflare
+- [GitHub Repository](https://github.com/snipeship/ccproxy) - Source code and issues
+- [Contributing](./contributing.md) - How to contribute to ccproxy
 
 ## License
 
-ccflare is open source software licensed under the MIT License. See the [LICENSE](../LICENSE) file for details.
+ccproxy is open source software licensed under the MIT License. See the [LICENSE](../LICENSE) file for details.
 
 ---
 

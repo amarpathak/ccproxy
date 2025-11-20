@@ -1,25 +1,25 @@
 {
-	"name": "ccflare",
+	"name": "ccproxy",
 	"version": "1.0.0",
-	"description": "TUI for ccflare load balancer",
+	"description": "TUI for ccproxy load balancer",
 	"bin": {
-		"ccflare": "./dist/ccflare"
+		"ccproxy": "./dist/ccproxy"
 	},
 	"type": "module",
 	"scripts": {
 		"dev": "bun run src/main.ts",
-		"build": "bun build src/main.ts --compile --outfile dist/ccflare --target=bun",
+		"build": "bun build src/main.ts --compile --outfile dist/ccproxy --target=bun",
 		"prepublishOnly": "bun run build",
-		"postpublish": "chmod +x dist/ccflare"
+		"postpublish": "chmod +x dist/ccproxy"
 	},
 	"dependencies": {
-		"@ccflare/tui-core": "workspace:*",
-		"@ccflare/ui-common": "workspace:*",
-		"@ccflare/database": "workspace:*",
-		"@ccflare/core-di": "workspace:*",
-		"@ccflare/config": "workspace:*",
-		"@ccflare/logger": "workspace:*",
-		"@ccflare/server": "workspace:*",
+		"@ccproxy/tui-core": "workspace:*",
+		"@ccproxy/ui-common": "workspace:*",
+		"@ccproxy/database": "workspace:*",
+		"@ccproxy/core-di": "workspace:*",
+		"@ccproxy/config": "workspace:*",
+		"@ccproxy/logger": "workspace:*",
+		"@ccproxy/server": "workspace:*",
 		"ink": "^6.0.0",
 		"ink-select-input": "^6.0.0",
 		"ink-spinner": "^5.0.0",
@@ -35,7 +35,7 @@
 		"dist"
 	],
 	"keywords": [
-		"ccflare",
+		"ccproxy",
 		"load-balancer",
 		"tui",
 		"cli"

@@ -1,5 +1,5 @@
-import type { RequestSummary } from "@ccflare/tui-core";
-import { processTokenUsage } from "@ccflare/ui-common";
+import type { RequestSummary } from "@ccproxy/tui-core";
+import { processTokenUsage } from "@ccproxy/ui-common";
 import { Box, Text } from "ink";
 
 interface TokenUsageDisplayProps {

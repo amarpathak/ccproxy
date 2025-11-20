@@ -1,9 +1,9 @@
-import { requestEvents } from "@ccflare/core";
+import { requestEvents } from "@ccproxy/core";
 import {
 	sanitizeRequestHeaders,
 	withSanitizedProxyHeaders,
-} from "@ccflare/http-common";
-import type { Account } from "@ccflare/types";
+} from "@ccproxy/http-common";
+import type { Account } from "@ccproxy/types";
 import type { ProxyContext } from "./handlers";
 import type { ChunkMessage, EndMessage, StartMessage } from "./worker-messages";
 

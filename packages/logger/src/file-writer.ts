@@ -6,8 +6,8 @@ import {
 	type Disposable,
 	LIMITS,
 	registerDisposable,
-} from "@ccflare/core";
-import type { LogEvent } from "@ccflare/types";
+} from "@ccproxy/core";
+import type { LogEvent } from "@ccproxy/types";
 
 export class LogFileWriter implements Disposable {
 	private logDir: string;
@@ -17,7 +17,7 @@ export class LogFileWriter implements Disposable {
 
 	constructor() {
 		// Create log directory in tmp folder
-		this.logDir = join(tmpdir(), "ccflare-logs");
+		this.logDir = join(tmpdir(), "ccproxy-logs");
 		if (!existsSync(this.logDir)) {
 			mkdirSync(this.logDir, { recursive: true });
 		}

@@ -2,7 +2,7 @@
 
 ## Overview
 
-ccflare uses SQLite as its database engine, providing a lightweight, serverless, and efficient storage solution for managing OAuth accounts, request history, and usage statistics. The database is designed to support high-performance load balancing operations while maintaining detailed audit trails and rate limit tracking.
+ccproxy uses SQLite as its database engine, providing a lightweight, serverless, and efficient storage solution for managing OAuth accounts, request history, and usage statistics. The database is designed to support high-performance load balancing operations while maintaining detailed audit trails and rate limit tracking.
 
 ### Key Features
 - **Zero-configuration** deployment with SQLite
@@ -293,16 +293,16 @@ const db = container.resolve<DatabaseOperations>(SERVICE_KEYS.Database);
 
 The database file is stored in a platform-specific configuration directory:
 
-- **macOS**: `~/Library/Application Support/ccflare/ccflare.db`
-- **Linux**: `~/.config/ccflare/ccflare.db`
-- **Windows**: `%APPDATA%\ccflare\ccflare.db`
+- **macOS**: `~/Library/Application Support/ccproxy/ccproxy.db`
+- **Linux**: `~/.config/ccproxy/ccproxy.db`
+- **Windows**: `%APPDATA%\ccproxy\ccproxy.db`
 
 ### Custom Location
 
-You can override the default location using the `ccflare_DB_PATH` environment variable:
+You can override the default location using the `ccproxy_DB_PATH` environment variable:
 
 ```bash
-export ccflare_DB_PATH=/custom/path/to/database.db
+export ccproxy_DB_PATH=/custom/path/to/database.db
 ```
 
 ### Runtime Configuration
@@ -542,7 +542,7 @@ These commands directly interact with the database through the `DatabaseOperatio
 
 1. **File-based Backup**: Simple copy of the SQLite file when the application is stopped:
 ```bash
-cp ccflare.db ccflare.db.backup
+cp ccproxy.db ccproxy.db.backup
 ```
 
 2. **Online Backup**: Use SQLite's backup API for hot backups:
@@ -553,7 +553,7 @@ VACUUM INTO 'backup.db';
 3. **Automated Backups**: Schedule regular backups using cron or system schedulers:
 ```bash
 # Daily backup with rotation
-0 2 * * * cp /path/to/ccflare.db /backups/ccflare-$(date +\%Y\%m\%d).db
+0 2 * * * cp /path/to/ccproxy.db /backups/ccproxy-$(date +\%Y\%m\%d).db
 ```
 
 ### Maintenance Operations
@@ -614,7 +614,7 @@ Key metrics to monitor:
 
 2. **Access Control**: Ensure proper file permissions:
 ```bash
-chmod 600 ccflare.db
+chmod 600 ccproxy.db
 ```
 
 3. **SQL Injection**: The codebase uses parameterized queries throughout, providing protection against SQL injection.

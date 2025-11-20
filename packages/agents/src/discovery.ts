@@ -1,15 +1,15 @@
 import { existsSync } from "node:fs";
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { basename, join, resolve } from "node:path";
-import { Config } from "@ccflare/config";
-import { Logger } from "@ccflare/logger";
+import { Config } from "@ccproxy/config";
+import { Logger } from "@ccproxy/logger";
 import {
 	type Agent,
 	type AgentTool,
 	type AgentWorkspace,
 	ALLOWED_MODELS,
 	type AllowedModel,
-} from "@ccflare/types";
+} from "@ccproxy/types";
 import { getAgentsDirectory } from "./paths";
 import { workspacePersistence } from "./workspace-persistence";
 

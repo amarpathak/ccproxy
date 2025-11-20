@@ -1,4 +1,4 @@
-import { OAuthError } from "@ccflare/core";
+import { OAuthError } from "@ccproxy/core";
 import type {
 	OAuthProvider,
 	OAuthProviderConfig,

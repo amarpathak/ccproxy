@@ -1,8 +1,8 @@
-# ccflare Architecture Documentation
+# ccproxy Architecture Documentation
 
 ## Overview
 
-ccflare is a sophisticated load balancer proxy system designed to distribute requests across multiple OAuth accounts for AI services (currently focused on Anthropic's Claude API). It prevents rate limiting by intelligently routing requests through different authenticated accounts using a session-based load balancing strategy.
+ccproxy is a sophisticated load balancer proxy system designed to distribute requests across multiple OAuth accounts for AI services (currently focused on Anthropic's Claude API). It prevents rate limiting by intelligently routing requests through different authenticated accounts using a session-based load balancing strategy.
 
 The system is built with a modular, microservices-inspired architecture using TypeScript and Bun runtime, emphasizing separation of concerns, extensibility, and real-time monitoring capabilities. Recent enhancements include asynchronous database operations, streaming response capture for analytics, advanced request filtering, and agent detection with model preference management.
 
@@ -16,7 +16,7 @@ graph LR
         UI3[API Clients]
     end
     
-    subgraph "ccflare Core"
+    subgraph "ccproxy Core"
         LB[Load Balancer]
         PROXY[Proxy Engine]
         AUTH[OAuth Manager]
@@ -66,7 +66,7 @@ graph TB
     end
 
     %% API Gateway Layer
-    subgraph "ccflare Server"
+    subgraph "ccproxy Server"
         SERVER[HTTP Server<br/>apps/server]
         
         subgraph "Request Processing"
@@ -146,7 +146,7 @@ graph TB
 The project is organized as a Bun monorepo with clear separation of concerns:
 
 ```
-ccflare/
+ccproxy/
 ├── apps/                    # Deployable applications
 │   ├── lander/            # Static landing page
 │   ├── server/            # Main HTTP server
@@ -322,7 +322,7 @@ classDiagram
 ```
 
 **Agent Discovery Process:**
-1. **Global Agents**: Loaded from `~/.config/ccflare/agents/` directory
+1. **Global Agents**: Loaded from `~/.config/ccproxy/agents/` directory
 2. **Workspace Agents**: Dynamically discovered from `<workspace>/.claude/agents/` directories
 3. **Agent Format**: Markdown files with frontmatter containing metadata
 4. **Workspace Detection**: Automatically registers workspaces from system prompts containing CLAUDE.md references
@@ -974,12 +974,12 @@ graph TB
 
 ## Agent System Architecture
 
-The agent system allows ccflare to automatically detect and apply model preferences based on the agent being used:
+The agent system allows ccproxy to automatically detect and apply model preferences based on the agent being used:
 
 ```mermaid
 graph TB
     subgraph "Agent Discovery"
-        GLOBAL[Global Agents<br/>~/.config/ccflare/agents/]
+        GLOBAL[Global Agents<br/>~/.config/ccproxy/agents/]
         WORKSPACE[Workspace Agents<br/><workspace>/.claude/agents/]
         REGISTRY[Agent Registry]
     end
@@ -1178,7 +1178,7 @@ stateDiagram-v2
 
 ### Streaming Architecture
 
-ccflare implements sophisticated streaming support for handling large language model responses:
+ccproxy implements sophisticated streaming support for handling large language model responses:
 
 ```mermaid
 graph TB
@@ -1359,7 +1359,7 @@ The architecture supports:
 ```mermaid
 graph TB
     subgraph "Local Machine"
-        SERVER[ccflare Server<br/>Port 8080]
+        SERVER[ccproxy Server<br/>Port 8080]
         DB[(SQLite DB)]
         LOGS[Log Files]
         CONFIG[Config Files]
@@ -1390,9 +1390,9 @@ graph TB
     end
     
     subgraph "Application Tier"
-        APP1[ccflare Instance 1]
-        APP2[ccflare Instance 2]
-        APP3[ccflare Instance N]
+        APP1[ccproxy Instance 1]
+        APP2[ccproxy Instance 2]
+        APP3[ccproxy Instance N]
     end
     
     subgraph "Data Tier"

@@ -1,4 +1,4 @@
-# ccflare 🛡️
+# ccproxy 🛡️
 
 **Track Every Request. Go Low-Level. Never Hit Rate Limits Again.**
 
@@ -8,9 +8,9 @@ The ultimate Claude API proxy with intelligent load balancing across multiple ac
 https://github.com/user-attachments/assets/c859872f-ca5e-4f8b-b6a0-7cc7461fe62a
 
 
-![ccflare Dashboard](apps/lander/src/screenshot-dashboard.png)
+![ccproxy Dashboard](apps/lander/src/screenshot-dashboard.png)
 
-## Why ccflare?
+## Why ccproxy?
 
 - **🚀 Zero Rate Limit Errors** - Automatically distribute requests across multiple accounts
 - **📊 Request-Level Analytics** - Track latency, token usage, and costs in real-time  
@@ -22,12 +22,12 @@ https://github.com/user-attachments/assets/c859872f-ca5e-4f8b-b6a0-7cc7461fe62a
 
 ```bash
 # Clone and install
-git clone https://github.com/snipeship/ccflare
-cd ccflare
+git clone https://github.com/snipeship/ccproxy
+cd ccproxy
 bun install
 
-# Start ccflare (TUI + Server)
-bun run ccflare
+# Start ccproxy (TUI + Server)
+bun run ccproxy
 
 # Configure Claude SDK
 export ANTHROPIC_BASE_URL=http://localhost:8080
@@ -45,7 +45,7 @@ export ANTHROPIC_BASE_URL=http://localhost:8080
 - Cost estimation and budgeting
 
 ### 🛠️ Developer Tools
-- Interactive TUI (`bun run ccflare`)
+- Interactive TUI (`bun run ccproxy`)
 - Web dashboard (`http://localhost:8080/dashboard`)
 - CLI for account management
 - REST API for automation
